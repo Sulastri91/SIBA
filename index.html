@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pendaftaran Siswa Baru - UPTD SDN Dinoyo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #1e90ff;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo img {
+            width: 80px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .header-title h1 {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .header-title p {
+            color: #e0e0e0;
+            font-size: 14px;
+        }
+
+        /* Main Content */
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .form-section {
+            flex: 2;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .form-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .form-section h2 {
+            color: #1e90ff;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #1e90ff;
+            outline: none;
+            background-color: #fff;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        button {
+            background-color: #1e90ff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1c86ee;
+        }
+
+        /* Info and Timeline Sections */
+        .info-timeline {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-box,
+        .timeline-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .info-box:hover,
+        .timeline-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-box h3,
+        .timeline-box h3 {
+            color: #1e90ff;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .info-box p,
+        .timeline-box ul {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .timeline-box ul {
+            list-style: none;
+        }
+
+        .timeline-box li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .timeline-box li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #1e90ff;
+            font-size: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e90ff;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                margin: 10px;
+            }
+
+            .form-section,
+            .info-timeline {
+                flex: 1;
+            }
+
+            .logo img {
+                width: 60px;
+            }
+
+            .header-title h1 {
+                font-size: 20px;
+            }
+
+            .header-title p {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo SDN Dinoyo">
+        </div>
+        <div class="header-title">
+            <h1>Pendaftaran Siswa Baru</h1>
+            <p>UPTD SDN Dinoyo - Tahun Ajaran 2025/2026</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Form Section -->
+        <div class="form-section">
+            <h2>Form Pendaftaran</h2>
+            <form id="registration-form" action="success.html" method="POST">
+                <div class="form-group">
+                    <label for="full-name">Nama Lengkap</label>
+                    <input type="text" id="full-name" name="full-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="birth-date">Tanggal Lahir</label>
+                    <input type="date" id="birth-date" name="birth-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Jenis Kelamin</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Pilih Jenis Kelamin</option>
+                        <option value="male">Laki-laki</option>
+                        <option value="female">Perempuan</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="address">Alamat</label>
+                    <textarea id="address" name="address" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="parent-name">Nama Orang Tua</label>
+                    <input type="text" id="parent-name" name="parent-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Nomor Telepon</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <button type="submit">Daftar Sekarang</button>
+            </form>
+        </div>
+
+        <!-- Info and Timeline Sections -->
+        <div class="info-timeline">
+            <div class="info-box">
+                <h3>Informasi Pendaftaran</h3>
+                <p>UPTD SDN Dinoyo membuka pendaftaran siswa baru untuk tahun ajaran 2025/2026. Pastikan data yang diisi lengkap dan benar. Untuk informasi lebih lanjut, hubungi kami di nomor 0812-3456-7890.</p>
+            </div>
+            <div class="timeline-box">
+                <h3>Timeline Pendaftaran</h3>
+                <ul>
+                    <li>1 Juni 2025: Pendaftaran Dibuka</li>
+                    <li>15 Juni 2025: Batas Akhir Pendaftaran</li>
+                    <li>20 Juni 2025: Pengumuman Hasil Seleksi</li>
+                    <li>25 Juni 2025: Daftar Ulang</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 UPTD SDN Dinoyo. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
